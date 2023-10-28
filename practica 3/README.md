@@ -1,4 +1,4 @@
-Endpints disponibles:
+Endpints disponibles:\n
 /obtain=>Todos los elementos
 /obtain/name/:name=>Elementos por nombre
 /obtain/id/:id=>Elementos por id
