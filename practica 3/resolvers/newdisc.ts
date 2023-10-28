@@ -42,7 +42,7 @@ const newdisc = async (req: Request, res: Response) => {
     */
 
     //subimos a la bd el nuevo disco
-    const newdisc = new discoSchema({nombre,autor,type,matriz,pais_de_impresion,arte_de_portada});
+    const newdisc = new DiscoModel({nombre,autor,type,matriz,pais_de_impresion,arte_de_portada});
     await newdisc.save();
     //mostramos el resultado
     res.status(200).send({
