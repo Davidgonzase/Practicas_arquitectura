@@ -6,7 +6,7 @@ const deletedisc=async (req:Request,res:Response)=>{
   //Solicitamos los recursos y el body, comprobamos que el tipo sea correcto
     const id=req.params.id;
     const {nombre,autor,type,matriz,pais_de_impresion,arte_de_portada} = req.body;
-    if (!nombre||!autor||!type||!matriz||!pais_de_impresion||!arte_de_portada) {
+    if (!nombre||!autor||!type||!pais_de_impresion||!arte_de_portada) {
       res.status(400).send("Faltan variables");
       return;
     }
