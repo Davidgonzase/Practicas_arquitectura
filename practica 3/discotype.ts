@@ -3,7 +3,7 @@ export type disco={
     Nombre:string
     Autor:string
     Formato:types 
-    Matriz:string
+    Matriz?:string
     Pais_de_impresion:string
     Arte_de_portada:string
     id:number

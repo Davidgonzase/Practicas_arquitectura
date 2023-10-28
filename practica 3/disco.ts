@@ -9,7 +9,7 @@ const discoschema = new Schema(
     nombre:{ type: String, required: true },
     autor:{ type: String, required: true },
     type:{ type: String,types,required: true }, //Utilizamos los valores del enum
-    matriz:{ type: String, required: true },
+    matriz:{ type: String, required: false },
     pais_de_impresion:{ type: String, required: true },
     arte_de_portada:{ type: String, required: true },
   },
