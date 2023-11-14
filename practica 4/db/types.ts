@@ -1,11 +1,11 @@
 export type dimension={
     nombre:string
-    planetas?: planeta[]
+    planetas:string[]
 }
 
 export type planeta={
     nombre:string
-    personas?: persona[]
+    personas:string[]
 }
 
 export type persona={
@@ -14,6 +14,9 @@ export type persona={
 }
 
 export type tardis={
-    nombre:string
-    type?: dimension[]
+    camuflaje:string,
+    regen_num:number,
+    año:number,
+    dimensiones:string[],
+    id:string
 }
