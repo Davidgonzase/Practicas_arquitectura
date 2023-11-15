@@ -1,0 +1,8 @@
+{
+  "tasks": {
+    "dev": " deno run --env --allow-all --watch main.ts",
+    "test-app": " deno run --env --allow-all main.ts",
+    "test": " deno test --env --allow-all",
+    "run-tests": "deno task test-app & sleep 5 && deno task test"
+  }
+}
