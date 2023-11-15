@@ -24,8 +24,9 @@ const env = await load();
 const MONGO_URL = env.MONGO_URL || Deno.env.get("MONGO_URL");
 if (!MONGO_URL) {
   console.log("No mongo URL found");
-}else{
-  await mongoose.connect(MONGO_URL);
+}
+
+await mongoose.connect(MONGO_URL);
 
   const app = express();
 
