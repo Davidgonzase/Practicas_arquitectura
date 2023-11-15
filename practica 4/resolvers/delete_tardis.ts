@@ -11,6 +11,10 @@ const deletetardis = async (req: Request, res: Response) => {
         }
         try {
             const tardis=await Tardismodel.findByIdAndRemove({_id:id}).populate({path : 'dimensiones'}).exec()
+            if(!tardis){
+                res.status(404).send("No se encuentra Tardis")
+                return
+            }
             tardis?.dimensiones.forEach(i=>{console.log(i.id),ddim(i.id)})
             res.status(200).send("Tardis borrada")
         } catch (error) {

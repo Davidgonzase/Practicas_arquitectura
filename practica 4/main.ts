@@ -13,6 +13,11 @@ import deletetardis from "./resolvers/delete_tardis.ts";
 import obtaindims from "./resolvers/obtaindim.ts";
 import deletedim from "./resolvers/delete_dimension.ts";
 import obtainplanets from "./resolvers/obtainplnt.ts";
+import deleteplanet from "./resolvers/delete_planetas.ts";
+import updatedim from "./resolvers/update_dimension.ts";
+import updateperson from "./resolvers/update_person.ts";
+import updateplnt from "./resolvers/update_planet.ts";
+import updatetardis from "./resolvers/update_tardis.ts";
 
 
 const env = await load();
@@ -39,7 +44,13 @@ app
 .post("/api/newperson",newperson)
 .delete("/api/deleteperson/:id",deleteperson)
 .delete("/api/deletetardis/:id",deletetardis)
+.delete("/api/deleteplanet/:id",deleteplanet)
 .delete("/api/deletedimension/:id",deletedim)
+.put("/api/updatetardis/:id",updatetardis)
+.put("/api/updatedimension/:id",updatedim)
+.put("/api/updateplanet/:id",updateplnt)
+.put("/api/updateperson/:id",updateperson)
+
 
 app.listen(3000, () => {
     console.log("Server listening on port 3000");
