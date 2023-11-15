@@ -24,36 +24,35 @@ const env = await load();
 const MONGO_URL = env.MONGO_URL || Deno.env.get("MONGO_URL");
 if (!MONGO_URL) {
   console.log("No mongo URL found");
+
 }
 
 await mongoose.connect(MONGO_URL);
 
-  const app = express();
+const app = express();
 
-  app.use(express.json())
-
-
-  app
-  .get("/api/getTardis",obtain)
-  .get("/api/getpersons",obtainperson)
-  .get("/api/getdimensions",obtaindims)
-  .get("/api/getplanets",obtainplanets)
-  .post("/api/newtardis",newtardis)
-  .post("/api/newdimension",newdim)
-  .post("/api/newplanet",newplanet)
-  .post("/api/newperson",newperson)
-  .delete("/api/deleteperson/:id",deleteperson)
-  .delete("/api/deletetardis/:id",deletetardis)
-  .delete("/api/deleteplanet/:id",deleteplanet)
-  .delete("/api/deletedimension/:id",deletedim)
-  .put("/api/updatetardis/:id",updatetardis)
-  .put("/api/updatedimension/:id",updatedim)
-  .put("/api/updateplanet/:id",updateplnt)
-  .put("/api/updateperson/:id",updateperson)
+app.use(express.json())
 
 
-  app.listen(3000, () => {
-      console.log("Server listening on port 3000");
-  });
-}
+app
+.get("/api/getTardis",obtain)
+.get("/api/getpersons",obtainperson)
+.get("/api/getdimensions",obtaindims)
+.get("/api/getplanets",obtainplanets)
+.post("/api/newtardis",newtardis)
+.post("/api/newdimension",newdim)
+.post("/api/newplanet",newplanet)
+.post("/api/newperson",newperson)
+.delete("/api/deleteperson/:id",deleteperson)
+.delete("/api/deletetardis/:id",deletetardis)
+.delete("/api/deleteplanet/:id",deleteplanet)
+.delete("/api/deletedimension/:id",deletedim)
+.put("/api/updatetardis/:id",updatetardis)
+.put("/api/updatedimension/:id",updatedim)
+.put("/api/updateplanet/:id",updateplnt)
+.put("/api/updateperson/:id",updateperson)
 
+
+app.listen(3000, () => {
+    console.log("Server listening on port 3000");
+});
