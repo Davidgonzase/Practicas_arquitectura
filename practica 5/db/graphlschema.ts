@@ -29,11 +29,11 @@ export const typeDefs = `#graphql
   type Mutation {
     createuser(nombre:String!,correoElectronico:String!):Usuario!
     createcomic(titulo:String!,descripcion:String!,formato:String!):comic!
-    addcomictocolection(idcomic:ID!,idcolection:ID!):Promise<String>!
-    deletecomicrelation(idcomic:ID!,idcolection:ID!):Promise<String>!
+    addcomictocolection(idcomic:ID!,idcolection:ID!):String!
+    deletecomicrelation(idcomic:ID!,idcolection:ID!):String!
     updatecomic(id:ID!,titulo:String,descripcion:String,formato:String):comic!
     updateuser(id:ID!,nombre:String,correoElectronico:String):Usuario!
-    deletecomic(id:ID!):Promise<String>!
-    deleteuser(id:ID!):Promise<String>!
+    deletecomic(id:ID!):String!
+    deleteuser(id:ID!):String!
   }
 `;
