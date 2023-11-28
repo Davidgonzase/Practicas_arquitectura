@@ -13,9 +13,9 @@ const MONGO_URL = env.MONGO_URL || Deno.env.get("MONGO_URL");
 
 try {
   MONGO_URL? await mongoose.connect(MONGO_URL) : null
-console.log("Conexión exitosa a MongoDB");
+  console.log("Conexión exitosa a MongoDB");
 } catch (error) {
-console.error("Error al conectar a MongoDB:", error);
+  console.error("Error al conectar a MongoDB:", error);
 }
 
 // A map of functions which return data for the schema.
