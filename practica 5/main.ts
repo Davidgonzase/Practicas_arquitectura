@@ -1,8 +1,8 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
-import { Query } from "./resolvers/query.ts";
+import { Query } from "./resolvers/query/query.ts";
 import { typeDefs } from "./db/graphlschema.ts";
-import { Mutation } from "./resolvers/mutations.ts";
+import { Mutation } from "./resolvers/mutations/mutations.ts";
 import { load } from "https://deno.land/std@0.204.0/dotenv/mod.ts";
 import mongoose from "mongoose";
 
@@ -12,10 +12,12 @@ const MONGO_URL = env.MONGO_URL || Deno.env.get("MONGO_URL");
 
 
 try {
-  MONGO_URL? await mongoose.connect(MONGO_URL) : null
+  if(!MONGO_URL)throw Error("MONGO_URL NOT PRESENT");
+  mongoose.connect(MONGO_URL);
   console.log("Conexión exitosa a MongoDB");
 } catch (error) {
   console.error("Error al conectar a MongoDB:", error);
+  Deno.exit(0)
 }
 
 // A map of functions which return data for the schema.
