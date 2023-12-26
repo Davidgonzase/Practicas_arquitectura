@@ -22,9 +22,9 @@ export const typeDefs = `#graphql
 
   type Query {
     getusers:[Usuario!]!
-    getuserid(id:ID!):Usuario!
+    getuser(id:ID!):Usuario!
     getcomics:[comic!]!
-    getcomicid(id:ID!):comic!
+    getcomic(id:ID!):comic!
   }
   type Mutation {
     createuser(nombre:String!,correoElectronico:String!):Usuario!

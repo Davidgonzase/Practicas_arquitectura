@@ -2,13 +2,13 @@ export type Usuario={
     nombre:string,
     correoElectronico:string,
     id:string,
-    coleccioncomics:coleccioncomics
+    coleccion:coleccioncomics
 }
 
 export type coleccioncomics={
     nombre:string,
     id:string,
-    comics:comic[]
+    comics:string[]
 }
 
 export type comic={

@@ -4,7 +4,7 @@ import { comic } from "../types.ts";
 const Schema = mongoose.Schema;
 const ComicSchema = new Schema(
     {
-        nombre:{type:String,required:true},
+        titulo:{type:String,required:true},
         descripcion:{type:String,required:true},
         formato:{type:String,required:true}
     },

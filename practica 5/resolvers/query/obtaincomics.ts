@@ -1,23 +1,16 @@
-import ComicSchema from "../../db/dbcomic.ts"
-import { comic } from "../../types.ts";
+import { ComicModel } from "../../db/dbscomic.ts";
+import ComicSchema from "../../db/dbscomic.ts"
 import { GraphQLError } from "graphql";
 
-const obtaincomics = async ():Promise<comic[]> => {
+const obtaincomics = async ():Promise<ComicModel[]> => {
     try{
-        const res = await ComicSchema.find({});
-
-        if(!res)throw Error;
-        const comics:comic[]=res.map(i=>{return{
-            titulo:i.titulo,
-            id:i._id,
-            descripcion:i.descripcion,
-            formato:i.formato
-        }})
-
-        return comics;
+        const res= await ComicSchema.find({});
+        if(!res)throw new Error;
+        return res;
     }catch(error){
-        throw new GraphQLError(`Intertal database error`, {
-            extensions: { code: "DB_ERROR" },
+        console.log(error.message)
+        throw new GraphQLError(`No Comic found`, {
+            extensions: { code: "NOT_FOUND" },
         });
     }
 }
